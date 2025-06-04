@@ -149,7 +149,7 @@ class OrderRepository implements OrderRepositoryInterface
         return $x;
     }
     public function findByUser($userId){
-        $x = Order::with(['orderItems'])->where('user_id', $userId->id)->get();
+        $x = Order::with(['orderItems.produk'])->where('user_id', $userId->id)->get();
         return $x;
     }
 }

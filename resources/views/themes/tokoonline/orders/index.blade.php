@@ -35,7 +35,28 @@
                                                 <p class="card-text">{{ date("H:i:s d-m-Y", strtotime($orders->order_date)) }}</p>
                                             </div>
                                             <div class="col-lg-6" style="text-align: right;">
-                                                <p class="card-text">{{ $orders->status }}</p>
+                                                @php
+                                                    switch ($orders->status) {
+                                                        case 'PENDING':
+                                                            $badgeClass = 'text-bg-info';
+                                                            break;
+                                                        case 'CONFIRMED':
+                                                            $badgeClass = 'text-bg-primary';
+                                                            break;
+                                                        case 'DELIVERED':
+                                                            $badgeClass = 'text-bg-success';
+                                                            break;
+                                                        default:
+                                                            $badgeClass = 'text-bg-secondary'; // fallback untuk status lain
+                                                            break;
+                                                    }
+                                                @endphp
+
+                                                <p class="card-text">
+                                                    <span class="badge {{ $badgeClass }}">
+                                                        {{ $orders->status }}
+                                                    </span>
+                                                </p>
                                                 <b class="card-text">Total {{ count($orders->orderItems) }} Products: Rp.{{number_format($orders->grand_total, 0, ',', '.') }}</b><br>
                                                 <button class="btn btn-success mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample-{{ $orders->code }}" aria-expanded="false" aria-controls="collapseExample">
                                                     &nbsp;&nbsp;&nbsp; <i class="bx bx-chevrons-right"></i>
@@ -46,7 +67,7 @@
                                                 <div class="row">
                                                     @foreach ($orders->orderItems as $items)
                                                     <div class="col-lg-3">
-                                                        <img src="{{ asset('storage/img/productImage/no-photo.png') }}" class="img-fluid rounded" style="width: 100px; height: 100px; object-fit: cover;">
+                                                        <img src="{{ asset('storage/img/productImage/'.$items->produk->featured_image) }}" class="img-fluid rounded" style="width: 100px; height: 100px; object-fit: cover;">
                                                     </div>
                                                     <div class="col-lg-9">
                                                         <div class="row">

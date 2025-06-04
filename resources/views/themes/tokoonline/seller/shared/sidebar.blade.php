@@ -2,9 +2,9 @@
 	<nav id="sidebar" class="sidebar js-sidebar">
 		<div class="sidebar-content js-simplebar">
 			<a class="sidebar-brand" href="index.html">
-			<span class="align-middle">AdminKit</span></a>
+			<span class="align-middle">HigeToko</span></a>
 			<ul class="sidebar-nav">
-				<li class="sidebar-header">Pages</li>
+				<li class="sidebar-header">Admin</li>
 				<li class="sidebar-item {{ request()->is('seller') ? 'active' : '' }}">
 					<a class="sidebar-link" href="{{ route('seller.index') }}">
 					<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span></a>
@@ -36,7 +36,7 @@
 						 <li>
 							  <a class="sidebar-link ms-4 {{ request()->is('seller/order/deliveredOrders') ? 'active' : '' }}" 
 								  href="{{ route('seller.deliveredOrders') }}">
-									<i class="align-middle" data-feather="check-circle"></i> Delivered Orders
+									<i class="align-middle" data-feather="truck"></i> Delivered Orders
 							  </a>
 						 </li>
 					</ul>
@@ -44,10 +44,10 @@
 			  
 
 
-				<li class="sidebar-header">Tools & Components</li>
+				<li class="sidebar-header">More</li>
 				<li class="sidebar-item">
 					<a class="sidebar-link" href="ui-buttons.html">
-					<i class="align-middle" data-feather="square"></i> <span class="align-middle">Buttons</span></a>
+					<i class="align-middle" data-feather="settings"></i> <span class="align-middle">Setting</span></a>
 				</li>
 			</ul>
 		</div>

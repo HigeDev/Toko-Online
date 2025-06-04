@@ -104,7 +104,7 @@
                                                 <div class="row align-items-center">
                                                     <div class="col-6 col-md-6 col-lg-7">
                                                         <div class="d-flex">
-                                                            <img src="assets/img/p1.jpg" alt="Ecommerce"
+                                                            <img src="{{ asset('storage/img/productImage/'.$item->product->featured_image) }}" alt="Ecommerce"
                                                                 style="height: 50px;">
                                                             <div class="ms-3">
                                                                 <a href="product.html">

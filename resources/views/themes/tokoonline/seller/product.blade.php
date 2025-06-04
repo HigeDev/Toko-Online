@@ -25,7 +25,7 @@
                                         </div>
                                     </div>
                                     <div class="mb-3 row align-self-center d-flex">
-                                        <img src="{{ asset('/img/productImage/no-photo.png') }}" id="preview" class="img-fluid w-50 mx-auto" alt="...">
+                                        <img src="{{ asset('/img/DefaultImage.png') }}" id="preview" class="img-fluid w-50 mx-auto" alt="...">
                                     </div>
                                 </div>
                                 <div class="col-lg-4">

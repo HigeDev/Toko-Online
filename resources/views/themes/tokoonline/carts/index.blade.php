@@ -30,7 +30,7 @@
                                         <div class="row align-items-center">
                                             <div class="col-6 col-md-6 col-lg-7">
                                                 <div class="d-flex">
-                                                    <img src="{{ asset('img/p1.jpg') }}" alt="Ecommerce"
+                                                    <img src="{{ asset('storage/img/productImage/'.$item->product->featured_image) }}" alt="Ecommerce"
                                                         style="height: 70px;">
                                                     <div class="ms-3">
                                                         <a href="{{ shop_product_link($item->product) }}">

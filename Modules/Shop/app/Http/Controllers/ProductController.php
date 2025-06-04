@@ -32,7 +32,7 @@ class ProductController extends Controller
         $this->tagRepository = $tagRepository;
         $this->defaultPriceRange = [
             'min' => 0,
-            'max' => 500000
+            'max' => 1000000
         ];
 
         $this->data['categories'] = $this->categoryRepository->findAll();

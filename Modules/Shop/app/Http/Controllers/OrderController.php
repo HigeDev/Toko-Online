@@ -12,7 +12,7 @@ use Modules\Shop\Repositories\Front\Interfaces\OrderRepositoryInterface;
 use Modules\Shop\Repositories\Front\Interfaces\AddressRepositoryInterface;
 use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Routing\Controllers\HasMiddleware;
-
+use Modules\Shop\Models\OrderItem;
 
 class OrderController extends Controller implements HasMiddleware
 {
@@ -33,6 +33,7 @@ class OrderController extends Controller implements HasMiddleware
     public function index()
     {
         $this->data['orders'] = $this->orderRepository->findByUser(auth()->user());
+        // dd($this->data);
         return $this->loadTheme('orders.index', $this->data);
     }
     public function checkout()

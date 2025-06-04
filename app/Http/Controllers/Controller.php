@@ -6,7 +6,7 @@ class Controller
 {
 
     protected $data = [];
-    protected $perPage = 10;
+    protected $perPage = 12;
     public function __construct() {}
     protected function loadTheme($view, $data = [])
     {
